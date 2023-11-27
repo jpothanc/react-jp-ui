@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./tooltipStyles.css";
+import "./tooltipStyles.scss";
 interface TooltipProps {
   text: string;
   children: React.ReactElement;

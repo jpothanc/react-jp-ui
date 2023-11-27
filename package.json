@@ -12,7 +12,7 @@
       "require": "./dist/index.umd.js",
       "types": "./dist/index.d.ts"
     },
-    "./styles": "./dist/style.css"
+    "./styles": "./dist/style.scss"
   },
   "files": [
     "/dist"
@@ -27,7 +27,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "node-sass": "^9.0.0",
     "react": "^18.2.0",
+    "react-avatar": "^5.0.3",
     "react-dom": "^18.2.0",
     "vite-plugin-dts": "^3.6.3"
   },
@@ -41,6 +43,7 @@
     "eslint": "^8.53.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.4",
+    "sass": "^1.69.5",
     "typescript": "^5.2.2",
     "vite": "^5.0.0"
   }

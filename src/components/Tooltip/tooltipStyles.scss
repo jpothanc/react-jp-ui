@@ -1,3 +1,6 @@
+$bg-color: #333;
+$text-color: #fff;
+
 .tooltip-container {
   position: relative;
   display: inline-block;
@@ -10,8 +13,8 @@
 
 .tooltip-text {
   position: absolute;
-  background-color: #333;
-  color: #fff;
+  background-color: $bg-color;
+  color: $text-color;
   padding: 5px 5px;
   border-radius: 5px;
   top: 100%;
