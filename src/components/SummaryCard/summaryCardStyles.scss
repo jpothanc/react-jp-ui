@@ -1,7 +1,7 @@
 $bg-color: #333;
 $text-color: #fff;
 
-.card {
+.jp_sc_card {
   width: 250px;
   height: 100%;
   border-radius: 10px;
@@ -13,25 +13,25 @@ $text-color: #fff;
   align-items: center;
   border: #000 solid 1px;
   padding: 1cap;
-  .card__body {
+  .jp_sc_card__body {
     padding: 1cap;
     color: #ede7e7;
     font-family: "Roboto", sans-serif;
     border: #cac7c7 solid 1px;
     font-size: 1rem;
   }
-  .card__title {
+  .jp_sc_card__title {
     font-size: 1.2rem;
     font-weight: 600;
     border: #000 solid 1px;
   }
-  .card__text {
+  .jp_sc_card__text {
     font-weight: 600;
   }
-  .card__icon {
+  .jp_sc_card__icon {
     font-size: 2.5rem;
   }
-  .card__footer {
+  .jp_sc_card__footer {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -41,12 +41,12 @@ $text-color: #fff;
       font-weight: 600;
       color: #000;
     }
-    .card__footer__icon {
+    .jp_sc_card__footer__icon {
       font-size: 1.5rem;
       color: #000;
     }
   }
 }
-.container {
+.jp_sc_container {
   position: relative;
 }

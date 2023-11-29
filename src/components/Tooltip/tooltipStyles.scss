@@ -1,17 +1,17 @@
 $bg-color: #333;
 $text-color: #fff;
 
-.tooltip-container {
+.jp_tooltip-container {
   position: relative;
   display: inline-block;
   white-space: nowrap;
 }
 
-.tooltip-trigger {
+.jp_tooltip-trigger {
   display: inline-block;
 }
 
-.tooltip-text {
+.jp_tooltip-text {
   position: absolute;
   background-color: $bg-color;
   color: $text-color;
@@ -25,6 +25,6 @@ $text-color: #fff;
   font-size: 11px;
 }
 
-.tooltip-trigger:hover + .tooltip-text {
+.jp_tooltip-trigger:hover + .tooltip-text {
   display: block;
 }

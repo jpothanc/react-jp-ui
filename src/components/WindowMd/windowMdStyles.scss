@@ -18,7 +18,7 @@ $window-scrollbar-color: #989393;
   align-items: center;
   transition: opacity 0.5s, visibility 0.5s, bottom 0.5s ease-in-out;
 }
-.window-container {
+.jp_wmd_container {
   display: flex;
   flex-direction: column;
   background-color: $window-background-color;
@@ -30,45 +30,48 @@ $window-scrollbar-color: #989393;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 14px;
   animation: slideFromBottom 0.5s ease-in-out forwards;
-}
-.window-title {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: space-between;
-  align-self: flex-start;
-  padding-bottom: 10px;
-}
-.window-title__text {
-  font-size: 1.1rem;
-  font-weight: 400;
-  padding-left: 2px;
-}
-.window-title__icon {
-  width: 20px;
-  height: 20px;
-  font-size: 10px;
-  font-family: sans-serif;
-  border-radius: 50%;
-  padding: 2px;
-  display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  &:hover {
-    background-color: $window-title-close-icon-color;
+  position: absolute;
+  z-index: 999; /* Set a high z-index to keep it on top */
+  .jp_wmd_title {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: space-between;
+    align-self: flex-start;
+    padding-bottom: 10px;
   }
-}
-.window-content {
-  display: none;
-  width: calc(100% - 20px);
-  height: calc(100% - 20px);
-  background-color: #1f1e1e;
-  padding-left: 10px;
-  padding-right: 10px;
-  border-radius: 10px;
-  overflow: auto;
+  .jp_wmd_title__text {
+    font-size: 1.1rem;
+    font-weight: 400;
+    padding-left: 2px;
+  }
+  .jp_wmd_title__icon {
+    width: 20px;
+    height: 20px;
+    font-size: 10px;
+    font-family: sans-serif;
+    border-radius: 50%;
+    padding: 2px;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      background-color: $window-title-close-icon-color;
+    }
+  }
+  .jp_wmd_content {
+    display: none;
+    // width: calc(100% - 20px);
+    // height: calc(100% - 20px);
+    background-color: #1f1e1e;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+    overflow: scroll;
+    align-self: center;
+  }
 }
 
 @keyframes slideFromBottom {
@@ -88,7 +91,7 @@ $window-scrollbar-color: #989393;
   bottom: 0; /* Position at the bottom of the screen */
 }
 
-.overlay.visible .window-content {
+.overlay.visible .jp_wmd_content {
   display: block;
 }
 

@@ -17,15 +17,15 @@ const Tooltip = ({ text, children }: TooltipProps) => {
   };
 
   return (
-    <div className="tooltip-container">
+    <div className="jp_tooltip-container">
       <div
-        className="tooltip-trigger"
+        className="jp_tooltip-trigger"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
         {children}
       </div>
-      {showTooltip && <div className="tooltip-text">{text}</div>}
+      {showTooltip && <div className="jp_tooltip-text">{text}</div>}
     </div>
   );
 };

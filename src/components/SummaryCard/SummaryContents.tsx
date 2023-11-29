@@ -1,9 +1,36 @@
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./summaryCardStyles.scss";
-import Window, { ModalRef } from "../Window/Window";
+import Window, { WindowMdRef } from "../WindowMd/WindowMd";
 
 const SummaryContents = () => {
-  const modalRef = useRef<ModalRef | null>(null);
+  const modalRef = useRef<WindowMdRef | null>(null);
+
+  const [readmeContent, setReadmeContent] = useState("");
+
+  useEffect(() => {
+    console.log("useEffect");
+    const fetchReadme = async () => {
+      try {
+        const response = await fetch(
+          "https://api.github.com/repos/jpothanc/jpothanc.github.io/readme"
+        );
+        const readmeData = await response.json();
+
+        // Fetch raw content of README.md using download_url
+        const readmeResponse = await fetch(readmeData.download_url);
+        const text = await readmeResponse.text();
+        console.log(text);
+        setReadmeContent(text);
+      } catch (error) {
+        console.error("Error fetching README:", error);
+      }
+    };
+
+    fetchReadme();
+
+    return () => {};
+  }, []);
+
   const handleOpenModal = () => {
     modalRef.current?.open();
   };
@@ -14,9 +41,10 @@ const SummaryContents = () => {
         <button onClick={handleOpenModal}>Toggle Content</button>
         <Window
           title="This is a title"
-          content="This content appears from the bottom to the middle!"
+          content={readmeContent}
           height={300}
           ref={modalRef}
+          bgcolor="#004d40"
         />
       </div>
     </>
