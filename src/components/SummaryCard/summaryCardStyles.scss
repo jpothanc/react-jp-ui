@@ -11,39 +11,64 @@ $text-color: #fff;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  border: #000 solid 1px;
+
   padding: 1cap;
   .jp_sc_card__body {
     padding: 1cap;
+    align-self: flex-start;
     color: #ede7e7;
-    font-family: "Roboto", sans-serif;
-    border: #cac7c7 solid 1px;
-    font-size: 1rem;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 0.8rem;
+    font-weight: 400;
+    border: #000 solid 1px;
+    .jp_sc_card__body__text {
+      padding: 1cap;
+      align-self: flex-start;
+      color: rgb(78, 155, 231);
+    }
   }
   .jp_sc_card__title {
-    font-size: 1.2rem;
+    display: flex;
+    column-gap: 4px;
+    font-size: 1.1rem;
     font-weight: 600;
-    border: #000 solid 1px;
-  }
-  .jp_sc_card__text {
-    font-weight: 600;
-  }
-  .jp_sc_card__icon {
-    font-size: 2.5rem;
+    .jp_sc_card__title__text {
+      align-self: center;
+    }
+    .jp_sc_card__title__logo {
+      align-self: center;
+      padding-left: 2px;
+    }
+    .jp_sc_card__title_right {
+      display: flex;
+      column-gap: 2px;
+      margin-left: auto;
+      align-items: center;
+      padding-left: 2px;
+      color: rgb(188, 119, 15);
+    }
   }
   .jp_sc_card__footer {
     width: 100%;
     display: flex;
+    flex-direction: column;
+
     justify-content: space-between;
     align-items: center;
-    .card__footer__text {
-      font-size: 1rem;
+    .jp_sc_card__footer__text {
+      align-self: flex-start;
+      font-size: 0.8rem;
       font-weight: 600;
-      color: #000;
+      margin-bottom: 5px;
     }
     .jp_sc_card__footer__icon {
-      font-size: 1.5rem;
+      display: flex;
+      width: 100%;
+      height: calc(100% - 70px);
+      padding-left: 10px;
       color: #000;
+      border: #282727 solid 1px;
+
     }
   }
 }

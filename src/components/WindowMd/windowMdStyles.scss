@@ -28,7 +28,7 @@ $window-scrollbar-color: #989393;
   width: $window-width;
   padding: 10px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 14px;
+  font-size: 13px;
   animation: slideFromBottom 0.5s ease-in-out forwards;
   position: absolute;
   z-index: 999; /* Set a high z-index to keep it on top */
@@ -38,7 +38,7 @@ $window-scrollbar-color: #989393;
     justify-content: space-between;
     align-items: space-between;
     align-self: flex-start;
-    padding-bottom: 10px;
+    padding-bottom: 5px;
   }
   .jp_wmd_title__text {
     font-size: 1.1rem;
@@ -63,8 +63,8 @@ $window-scrollbar-color: #989393;
   }
   .jp_wmd_content {
     display: none;
-    // width: calc(100% - 20px);
-    // height: calc(100% - 20px);
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
     background-color: #1f1e1e;
     padding-left: 10px;
     padding-right: 10px;

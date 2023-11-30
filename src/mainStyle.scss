@@ -1,0 +1,12 @@
+.summary_container {
+  display: flex;
+  flex-direction: row;
+  column-gap: 4px;
+  row-gap: 4px;
+}
+
+@media screen and (max-width: 800px) {
+  .summary_container {
+    flex-direction: column;
+  }
+}
