@@ -1,30 +1,32 @@
 import "./summaryCardStyles.scss";
 import Avatar from "react-avatar";
-import { FaSquareGit } from "react-icons/fa6";
+import { FaSquareGit, FaLink } from "react-icons/fa6";
 // import { TbArrowsMaximize } from "react-icons/tb";
 import { useEffect, useRef, useState } from "react";
 import WindowMd, { WindowMdRef } from "../WindowMd/WindowMd";
 import { CiMenuKebab } from "react-icons/ci";
+
 type Props = {
   title: string;
-  content?: string;
+  link: string;
+  body: string;
+  tech: string;
+  repo: string;
+  info: string;
   height?: number;
   width?: number;
   bgcolor?: string;
 };
 
-const SummaryCard = ({ title }: Props) => {
+const SummaryCard = ({ title, link, body, tech, repo, info }: Props) => {
   const modalRef = useRef<WindowMdRef | null>(null);
   const [readmeContent, setReadmeContent] = useState("");
+
   useEffect(() => {
-    console.log("useEffect");
     const fetchReadme = async () => {
       try {
-        const response = await fetch(
-          "https://api.github.com/repos/jpothanc/jpothanc.github.io/readme"
-        );
+        const response = await fetch(info);
         const readmeData = await response.json();
-
         // Fetch raw content of README.md using download_url
         const readmeResponse = await fetch(readmeData.download_url);
         const text = await readmeResponse.text();
@@ -49,37 +51,30 @@ const SummaryCard = ({ title }: Props) => {
         <div className="jp_sc_card__body">
           <div className="jp_sc_card__title">
             <div className="jp_sc_card__title__logo">
-              <Avatar name={title} size="24" round={false} />
+              <Avatar name={title} size="22" round={false} />
             </div>
             <div className="jp_sc_card__title__text">{title}</div>
-            <div className="jp_sc_card__title_right" onClick={handleOpenModal}>
-              <FaSquareGit size="24" />
-              <CiMenuKebab size="24" />
+            <div className="jp_sc_card__title_right">
+              <a href={link} target="_blank" className="jp_sc_link">
+                <FaLink size="16" />
+              </a>
+              <a href={repo} target="_blank" className="jp_sc_link">
+                <FaSquareGit size="16" />
+              </a>
+              <CiMenuKebab size="16" onClick={handleOpenModal} />
             </div>
           </div>
           <hr></hr>
-          <p className="jp_sc_card__body__text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content. Some quick example text to build on the
-            card title and make up the bulk of the card's content.
-          </p>
+          <p className="jp_sc_card__body__text">{body}</p>
           <div className="jp_sc_card__footer">
             <div className="jp_sc_card__footer__text">Technologies</div>
             <div className="jp_sc_card__footer__icon">
-              <img
-                src="https://skillicons.dev/icons?i=java,azure&perline=10"
-                width="50"
-                height="50"
-              />
+              <img src={tech} height="20" />
             </div>
           </div>
         </div>
       </div>
-      <WindowMd
-        title="This is a title"
-        content={readmeContent}
-        ref={modalRef}
-      />
+      <WindowMd title={title} content={readmeContent} ref={modalRef} />
     </>
   );
 };

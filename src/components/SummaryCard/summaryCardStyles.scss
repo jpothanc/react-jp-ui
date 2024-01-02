@@ -1,74 +1,95 @@
 $bg-color: #333;
 $text-color: #fff;
+$title_right-color: rgb(188, 119, 15);
+$border: #282727 solid 1px;
+
+.jp_sc_link {
+  color: $title_right-color;
+  text-decoration: underline;
+}
 
 .jp_sc_card {
-  width: 250px;
+  width: 220px;
   height: 100%;
+  min-width: 220px;
   border-radius: 10px;
   background-color: $bg-color;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-
   padding: 1cap;
+
   .jp_sc_card__body {
-    padding: 1cap;
+    padding: 10px;
+    border-radius: 10px;
+    min-width: calc(100% - 20px);
     align-self: flex-start;
-    color: #ede7e7;
+    color: rgb(187, 190, 193);
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     font-weight: 400;
-    border: #000 solid 1px;
+    border: $border;
+
     .jp_sc_card__body__text {
       padding: 1cap;
+      min-height: 90px;
       align-self: flex-start;
-      color: rgb(78, 155, 231);
     }
   }
   .jp_sc_card__title {
     display: flex;
     column-gap: 4px;
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     font-weight: 600;
+
+    .jp_sc_card__title__line {
+      border: none; /* Removes default border */
+      height: 2px; /* Set the height for the horizontal line */
+      background-color: #f00; /* Sets the background color to red */
+    }
+
     .jp_sc_card__title__text {
       align-self: center;
     }
+
     .jp_sc_card__title__logo {
       align-self: center;
       padding-left: 2px;
     }
+
     .jp_sc_card__title_right {
       display: flex;
-      column-gap: 2px;
+      column-gap: 4px;
       margin-left: auto;
       align-items: center;
       padding-left: 2px;
-      color: rgb(188, 119, 15);
+      color: $title_right-color;
     }
   }
   .jp_sc_card__footer {
     width: 100%;
     display: flex;
     flex-direction: column;
-
     justify-content: space-between;
     align-items: center;
+
     .jp_sc_card__footer__text {
+      padding: 1px;
+      padding-left: 10px;
       align-self: flex-start;
-      font-size: 0.8rem;
+      font-size: 0.6rem;
       font-weight: 600;
       margin-bottom: 5px;
     }
     .jp_sc_card__footer__icon {
       display: flex;
-      width: 100%;
+      width: 90%;
       height: calc(100% - 70px);
+      padding: 5px;
       padding-left: 10px;
-      color: #000;
-      border: #282727 solid 1px;
-
+      background-color: #201e1e;
+      border: $border;
+      border-radius: 1cap;
     }
   }
 }
