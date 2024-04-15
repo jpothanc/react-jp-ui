@@ -1,0 +1,43 @@
+$bg-color: #262424;
+$color-item: #fff;
+$bg-color-item: #0a5d95;
+$bg-color-sub-item: #f7f8f6;
+$color-sub-item: #000;
+
+.jp_btn_menu_item {
+  display: inline-block;
+  min-width: 50px;
+  text-align: center;
+  background-color: $bg-color-item;
+  color: $color-item;
+  border: none;
+  padding: 5px 5px;
+  font-size: 11px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  border-radius: 5px;
+  margin: 3px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    filter: brightness(0.9);
+    transform: scale(1.1);
+  }
+  .jp_btn_menu_subitem {
+    margin-top: 4px;
+    background-color: $bg-color-sub-item;
+    color: $color-sub-item;
+    border-radius: 10px;
+    font-size: 80%;
+    padding: 2px 5px;
+  }
+}
+
+.jp_btn_menu_container {
+  margin: 2px;
+  background-color: $bg-color;
+  padding: 5px;
+  color: $color-item;
+  flex-wrap: wrap;
+  width: 80%;
+  column-gap: 4px;
+}
