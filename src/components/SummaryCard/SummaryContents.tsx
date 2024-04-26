@@ -2,7 +2,11 @@ import { useEffect, useRef, useState } from "react";
 import "./summaryCardStyles.scss";
 import Window, { WindowMdRef } from "../WindowMd/WindowMd";
 
-const SummaryContents = () => {
+type Props = {
+  url: string;
+};
+
+const SummaryContents = ({ url }: Props) => {
   const modalRef = useRef<WindowMdRef | null>(null);
 
   const [readmeContent, setReadmeContent] = useState("");
@@ -11,11 +15,8 @@ const SummaryContents = () => {
     console.log("useEffect");
     const fetchReadme = async () => {
       try {
-        const response = await fetch(
-          "https://api.github.com/repos/jpothanc/jpothanc.github.io/readme"
-        );
+        const response = await fetch(url);
         const readmeData = await response.json();
-
         // Fetch raw content of README.md using download_url
         const readmeResponse = await fetch(readmeData.download_url);
         const text = await readmeResponse.text();

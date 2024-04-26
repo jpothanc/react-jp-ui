@@ -13,7 +13,7 @@ const App = () => {
       <Tooltip text="Hello World">
         <button>Hover over me</button>
       </Tooltip>
-      <SummaryContents />
+      <SummaryContents url="https://api.github.com/repos/jpothanc/jpothanc.github.io/readme" />
 
       <div className="summary_container">
         <SummaryCard
