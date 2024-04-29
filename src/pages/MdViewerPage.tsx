@@ -35,7 +35,7 @@ const MdViewerPage = () => {
             {
               name: "web-styling-layout-hacks",
               description: "quick useful css layout hacks",
-              link: "https://raw.githubusercontent.com/jpothanc/developer-notes/main/web-styling/css/css_layout_hacks.md",
+              link: "https://raw.githubusercontent.com/jpothanc/developer-notes/main/Azure/Cheat-Sheet.md",
             },
             { name: "test me" },
             { name: "test me" },

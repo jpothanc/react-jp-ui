@@ -2,6 +2,7 @@ import "./MdViewerStyles.scss";
 import Markdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { materialDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import remarkGfm from "remark-gfm";
 
 type Props = {
   content: string;
@@ -27,6 +28,7 @@ const MdViewer = ({ content, height, width, bgcolor, textcolor }: Props) => {
           <div className="markdown-content">
             <Markdown
               children={content}
+              remarkPlugins={[remarkGfm]}
               components={{
                 code(props) {
                   const { children, className, node, ...rest } = props;

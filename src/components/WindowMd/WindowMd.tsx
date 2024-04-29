@@ -4,6 +4,7 @@ import { Tooltip } from "../..";
 import Markdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { materialDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import remarkGfm from "remark-gfm";
 
 type Props = {
   title: string;
@@ -61,6 +62,7 @@ const WindowMd = forwardRef(
               <div className="markdown-content">
                 <Markdown
                   children={content}
+                  remarkPlugins={[remarkGfm]}
                   components={{
                     code(props) {
                       const { children, className, node, ...rest } = props;
