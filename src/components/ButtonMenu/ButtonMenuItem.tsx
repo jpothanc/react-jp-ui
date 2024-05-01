@@ -2,9 +2,10 @@ import { buttonItem } from "./types";
 
 type Props = {
   item: buttonItem;
+  selected?: boolean;
   onClick?: (item: buttonItem) => void;
 };
-const ButtonMenuItem = ({ item, onClick: onClick }: Props) => {
+const ButtonMenuItem = ({ item, selected, onClick: onClick }: Props) => {
   return (
     <>
       <div
@@ -12,6 +13,8 @@ const ButtonMenuItem = ({ item, onClick: onClick }: Props) => {
         style={{
           backgroundColor: item.bgColor,
           color: item.textColor,
+          scale: selected ? "1.1" : "1",
+          border: selected ? "1px solid white" : "",
         }}
         onClick={() => onClick && onClick(item)}
       >

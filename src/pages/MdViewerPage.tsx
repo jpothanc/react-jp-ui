@@ -29,8 +29,6 @@ const MdViewerPage = () => {
               name: "web-styling-containers",
               description: "flex,grids,etc",
               link: "https://raw.githubusercontent.com/jpothanc/developer-notes/main/web-styling/css/css_containers.md",
-              bgColor: "#f00",
-              bgColorDesc: "green",
             },
             {
               name: "web-styling-layout-hacks",

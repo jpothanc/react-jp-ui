@@ -1,0 +1,52 @@
+.jp_simple_navbar {
+  grid-area: navbar;
+  padding-left: 20px;
+  display: flex;
+  padding: 15px 0;
+  background-color: $nav-color;
+  column-gap: 5px;
+  font-family: "Roboto", sans-serif;
+  font-size: 24px;
+  .jp_simple_navbar__logo {
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 40px;
+    font-style: italic;
+    font-family: "Roboto", sans-serif;
+    background-color: $about-color;
+    color: $logo-color;
+    border: solid 1px $nav-color;
+    border-radius: 5px;
+    transition: all 0.5s ease;
+    &:hover {
+      filter: brightness(1.2);
+    }
+  }
+  .jp_simple_navbar__menu {
+    display: flex;
+    align-items: center;
+    justify-items: flex-end;
+    margin-left: auto;
+    padding-right: 20px;
+    column-gap: 10px;
+
+    .jp_simple_navbar__menu-item {
+      padding: 5px 5px;
+      background-color: $about-color;
+      color: $logo-color;
+      border-radius: 50%;
+      width: 25px;
+      height: 25px;
+      text-align: center;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.5s ease;
+      &:hover {
+        filter: brightness(1.2);
+      }
+    }
+  }
+}
