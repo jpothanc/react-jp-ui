@@ -1,3 +1,7 @@
+$about-color: #e9e6e8e2;
+$logo-color: #343333;
+$nav-color: #37474f;
+
 .jp_simple_navbar {
   grid-area: navbar;
   padding-left: 20px;
@@ -12,8 +16,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 120px;
-    height: 40px;
+    display: inline-block;
+    min-width: 150px;
+    padding: 4px;
+    min-height: 20px;
     font-style: italic;
     font-family: "Roboto", sans-serif;
     background-color: $about-color;

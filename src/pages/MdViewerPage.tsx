@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import ButtonMenuList from "../components/ButtonMenu/ButtonMenuList";
 import MdViewer from "../components/MdViewer/MdViewer";
+import SimpleNavBar from "../components/SimpleNavBar/SimpleNavBar";
 
 type mdContent = {
   url: string | undefined;
@@ -22,6 +23,10 @@ const MdViewerPage = () => {
   }, [mdContent.url]);
   return (
     <>
+      <SimpleNavBar
+        appName="MdViewerPage"
+        aboutUrl="https://raw.githubusercontent.com/jpothanc/devnotes/main/README.md"
+      />
       <div>
         <ButtonMenuList
           items={[
@@ -31,10 +36,16 @@ const MdViewerPage = () => {
               link: "https://raw.githubusercontent.com/jpothanc/developer-notes/main/web-styling/css/css_containers.md",
             },
             {
-              name: "web-styling-layout-hacks",
-              description: "quick useful css layout hacks",
-              link: "https://raw.githubusercontent.com/jpothanc/developer-notes/main/Azure/Cheat-Sheet.md",
+              name: "java-collections",
+              description: "java collections",
+              link: "https://raw.githubusercontent.com/jpothanc/developer-notes/main/java/collections.md",
             },
+            {
+              name: "azure-cheat-sheet",
+              description: "azure cheat sheet",
+              link: "https://raw.githubusercontent.com/jpothanc/developer-notes/main/azure/0-azure%20cheat-sheet.md",
+            },
+
             { name: "test me" },
             { name: "test me" },
             { name: "test me" },

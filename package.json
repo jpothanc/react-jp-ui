@@ -2,7 +2,7 @@
   "name": "react-jp-ui",
   "private": false,
   "description": "A simple personal ui library for React",
-  "version": "1.0.35",
+  "version": "1.0.37",
   "main": "dist/index.umd.js",
   "module": "dist/index.es.js",
   "types": "dist/index.d.ts",

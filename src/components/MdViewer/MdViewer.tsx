@@ -1,7 +1,8 @@
 import "./MdViewerStyles.scss";
 import Markdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { materialDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+
 import remarkGfm from "remark-gfm";
 
 type Props = {
@@ -37,7 +38,7 @@ const MdViewer = ({ content, height, width, bgcolor, textcolor }: Props) => {
                     <SyntaxHighlighter
                       PreTag="div"
                       language={match[1]}
-                      style={materialDark}
+                      style={oneDark}
                     >
                       {String(children).replace(/\n$/, "")}
                     </SyntaxHighlighter>

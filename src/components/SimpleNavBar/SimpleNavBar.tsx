@@ -1,14 +1,14 @@
-import { WindowMd, WindowMdRef } from "react-jp-ui";
+import "./simpleNavBar.scss";
 import { useEffect, useRef, useState } from "react";
-import { GoShare } from "react-icons/go";
 import { IoMenu } from "react-icons/io5";
+import WindowMd, { WindowMdRef } from "../WindowMd/WindowMd";
 
 type Props = {
   appName: string;
-  readme: string;
+  aboutUrl: string;
 };
 
-const SimpleNavBar = ({ appName, readme }: Props) => {
+const SimpleNavBar = ({ appName, aboutUrl: readme }: Props) => {
   const [about, setAbout] = useState<string>("");
   const modalRef = useRef<WindowMdRef | null>(null);
   const handleOpenModal = () => {
@@ -19,8 +19,6 @@ const SimpleNavBar = ({ appName, readme }: Props) => {
     fetch(readme)
       .then((response) => response.text())
       .then((text) => setAbout(text));
-
-    return () => {};
   }, []);
 
   return (
@@ -28,9 +26,6 @@ const SimpleNavBar = ({ appName, readme }: Props) => {
       <div className="jp_simple_navbar">
         <div className="jp_simple_navbar__logo">{appName}</div>
         <div className="jp_simple_navbar__menu">
-          <div>
-            <GoShare className="jp_simple_navbar__menu-item" />
-          </div>
           <div onClick={handleOpenModal}>
             <IoMenu size="24" className="jp_simple_navbar__menu-item" />
           </div>
